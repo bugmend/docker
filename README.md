@@ -50,10 +50,10 @@ Connecting to a MySQL instance running in a Docker container via PhpMyAdmin. We 
    ```
 4. Start two additional nodes:
    ```bash
-   docker run --name cassandra-node1   --network cassandra-xunw   --hostname cassandra-node1   -p 9044:9042   -m 2g --memory-swap 3g   -e CASSANDRA_SEEDS=cassandra-seed   -e MAX_HEAP_SIZE=1024M   -e HEAP_NEWSIZE=256M   -d cassandra
+   docker run --name cassandra-node1 --network cassandra-net --hostname cassandra-node1 -p 9044:9042 -m 2g --memory-swap 3g -e CASSANDRA_SEEDS=cassandra-seed -e MAX_HEAP_SIZE=1024M -e HEAP_NEWSIZE=256M -d cassandra
    ```
    ```bash
-   docker run --name cassandra-node2   --network cassandra-net   --hostname cassandra-node2   -p 9045:9042   -m 2g --memory-swap 3g   -e CASSANDRA_SEEDS=cassandra-seed   -e MAX_HEAP_SIZE=1024M   -e HEAP_NEWSIZE=256M   -d cassandra
+   docker run --name cassandra-node2 --network cassandra-net --hostname cassandra-node2 -p 9045:9042 -m 2g --memory-swap 3g -e CASSANDRA_SEEDS=cassandra-seed -e MAX_HEAP_SIZE=1024M -e HEAP_NEWSIZE=256M -d cassandra
    ```
 5. Inspect the network configuration:
     ```bash
