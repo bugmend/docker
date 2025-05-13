@@ -63,17 +63,6 @@ Connecting to a MySQL instance running in a Docker container via PhpMyAdmin. We 
     ```bash
     docker exec -it cassandra-seed nodetool status
     ```
-   > ***Note:*** Identify which node is the seed node:
-   >
-   > ```bash
-   > docker exec -it cassandra-node1 cat /etc/cassandra/cassandra.yaml | grep -i seeds
-   > ```
-   > ```bash
-   > docker exec -it cassandra-node2 cat /etc/cassandra/cassandra.yaml | grep -i seeds
-   > ```
-   > ```bash
-   > docker exec -it cassandra-seed cat /etc/cassandra/cassandra.yaml | grep -i seeds
-   > ```
 7. Start Bash Shell in Cassandra Container (Seed Node):
    ```bash
    docker exec -it cassandra-seed bash
