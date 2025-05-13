@@ -15,19 +15,19 @@ Explore containerization with our Docker Tutorials repository. Perfect for begin
 7. Run ```MySQL``` instances or containers: Based on our requirements, we need to initiate three MySQL servers, each using a distinct port number.
    - In you Terminal or Command Prompt window type the following command/s and presee Enter
      - Running Server 1: 
-       - ```docker run --name server1 -e MYSQL_ROOT_PASSWORD=_your_password_ -p 3307 -d mysql```
+       - ```docker run --name server1 -e MYSQL_ROOT_PASSWORD=_your_password_ -p 3307:3306 -d mysql```
      - Running Server 2: 
-       - ```docker run --name server2 -e MYSQL_ROOT_PASSWORD=_your_password_ -p 3308 -d mysql```
+       - ```docker run --name server2 -e MYSQL_ROOT_PASSWORD=_your_password_ -p 3308:3306 -d mysql```
      - Running Server 3: 
-       - ```docker run --name server3 -e MYSQL_ROOT_PASSWORD=_your_password_ -p 3309 -d mysql```
+       - ```docker run --name server3 -e MYSQL_ROOT_PASSWORD=_your_password_ -p 3309:3306 -d mysql```
      > You can run as many servers as you like using the above command but you should change the name and port number
 8. Verify the running status of your MySQL servers by typing ```docker ps``` and it will return a list of servers which are currently running.
 9. Login to the MySQL Servers:
    > The password is not visible when you type.
 11. Open three Terminal or Command Prompt Windows and execute the following commands:
-    - Terminal/Command Prompt 1: ```docker exec -it server1 mysql -P 3307:3306 -u root -p``` and press enter and then your password. 
-    - Terminal/Command Prompt 2: ```docker exec -it server2 mysql -P 3308:3306 -u root -p``` and press enter and then your password.
-    - Terminal/Command Prompt 3: ```docker exec -it server3 mysql -P 3309:3306 -u root -p``` and press enter and then your password.
+    - Terminal/Command Prompt 1: ```docker exec -it server1 mysql -P 3307 -u root -p``` and press enter and then your password. 
+    - Terminal/Command Prompt 2: ```docker exec -it server2 mysql -P 3308 -u root -p``` and press enter and then your password.
+    - Terminal/Command Prompt 3: ```docker exec -it server3 mysql -P 3309 -u root -p``` and press enter and then your password.
 ## phpMyAdmin - A web interface for MySQL and MariaDB.
 Connecting to a MySQL instance running in a Docker container via PhpMyAdmin. We are assuming you will create a new MySQL container to access via phpMyAdmin. 
 1. **Create a Docker Network:** ```docker network create mysql-network```
